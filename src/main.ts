@@ -1,4 +1,4 @@
-import core from "@actions/core";
+import * as core from "@actions/core";
 import OpenAI from "openai";
 import { getConfig } from "./config";
 import { findTestFiles } from "./findTestFiles";

@@ -1,29 +1,27 @@
-import core from "@actions/core";
-import github from "@actions/github";
+import * as core from "@actions/core";
+import * as github from "@actions/github";
 import { beforeEach, describe, expect, test, vi } from "vitest";
 import { postCommentToPR } from "../src/postCommentToPr";
 
 vi.mock("@actions/github", async (importOriginal) => {
 	const actual = await importOriginal<typeof github>();
 	return {
-		default: {
-			...actual,
-			getOctokit: vi.fn().mockReturnValue({
-				rest: {
-					issues: {
-						createComment: vi.fn(),
-					},
+		...actual,
+		getOctokit: vi.fn().mockReturnValue({
+			rest: {
+				issues: {
+					createComment: vi.fn(),
 				},
-			}),
-			context: {
-				repo: {
-					owner: "testOwner",
-					repo: "testRepo",
-				},
-				payload: {
-					pull_request: {
-						number: 123,
-					},
+			},
+		}),
+		context: {
+			repo: {
+				owner: "testOwner",
+				repo: "testRepo",
+			},
+			payload: {
+				pull_request: {
+					number: 123,
 				},
 			},
 		},
@@ -31,10 +29,8 @@ vi.mock("@actions/github", async (importOriginal) => {
 });
 
 vi.mock("@actions/core", () => ({
-	default: {
-		info: vi.fn(),
-		warning: vi.fn(),
-	},
+	info: vi.fn(),
+	warning: vi.fn(),
 }));
 
 describe("postCommentToPR", () => {

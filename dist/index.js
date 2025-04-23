@@ -77,7 +77,7 @@ function getAugmentedNamespace(n) {
 	return a;
 }
 
-var core$1 = {};
+var core = {};
 
 var command = {};
 
@@ -26941,10 +26941,10 @@ function requirePlatform () {
 var hasRequiredCore;
 
 function requireCore () {
-	if (hasRequiredCore) return core$1;
+	if (hasRequiredCore) return core;
 	hasRequiredCore = 1;
 	(function (exports) {
-		var __createBinding = (core$1 && core$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+		var __createBinding = (core && core.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 		    if (k2 === undefined) k2 = k;
 		    var desc = Object.getOwnPropertyDescriptor(m, k);
 		    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -26955,19 +26955,19 @@ function requireCore () {
 		    if (k2 === undefined) k2 = k;
 		    o[k2] = m[k];
 		}));
-		var __setModuleDefault = (core$1 && core$1.__setModuleDefault) || (Object.create ? (function(o, v) {
+		var __setModuleDefault = (core && core.__setModuleDefault) || (Object.create ? (function(o, v) {
 		    Object.defineProperty(o, "default", { enumerable: true, value: v });
 		}) : function(o, v) {
 		    o["default"] = v;
 		});
-		var __importStar = (core$1 && core$1.__importStar) || function (mod) {
+		var __importStar = (core && core.__importStar) || function (mod) {
 		    if (mod && mod.__esModule) return mod;
 		    var result = {};
 		    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 		    __setModuleDefault(result, mod);
 		    return result;
 		};
-		var __awaiter = (core$1 && core$1.__awaiter) || function (thisArg, _arguments, P, generator) {
+		var __awaiter = (core && core.__awaiter) || function (thisArg, _arguments, P, generator) {
 		    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 		    return new (P || (P = Promise))(function (resolve, reject) {
 		        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -27287,12 +27287,11 @@ function requireCore () {
 		 */
 		exports.platform = __importStar(requirePlatform());
 		
-	} (core$1));
-	return core$1;
+	} (core));
+	return core;
 }
 
 var coreExports = requireCore();
-var core = /*@__PURE__*/getDefaultExportFromCjs(coreExports);
 
 const default_format = 'RFC3986';
 const formatters = {
@@ -27662,7 +27661,7 @@ function stringify(object, opts = {}) {
     return joined.length > 0 ? prefix + joined : '';
 }
 
-const VERSION$6 = '4.94.0'; // x-release-please-version
+const VERSION$6 = '4.95.1'; // x-release-please-version
 
 let auto = false;
 let kind = undefined;
@@ -33472,16 +33471,16 @@ const formatTemperature = (value) => Math.round(Math.min(Math.max(value, MIN_TEM
     10;
 
 function getConfig() {
-    const apiKey = core.getInput("openai_api_key", { required: true });
-    const batchSize = Number(core.getInput("batch_size", { required: false })) || 5;
-    const model = core.getInput("model", { required: false }) || "gpt-4o-mini";
-    const temperatureInput = parseFloat(core.getInput("temperature", { required: false }));
+    const apiKey = coreExports.getInput("openai_api_key", { required: true });
+    const batchSize = Number(coreExports.getInput("batch_size", { required: false })) || 5;
+    const model = coreExports.getInput("model", { required: false }) || "gpt-4o-mini";
+    const temperatureInput = parseFloat(coreExports.getInput("temperature", { required: false }));
     const temperature = Number.isNaN(temperatureInput)
         ? 0.5
         : formatTemperature(temperatureInput);
-    const testPatterns = core.getInput("test_files", { required: false }) || "**/*.test.ts";
-    const githubToken = core.getInput("github_token", { required: false }) || undefined;
-    const onlyChangedFilesInput = core.getInput("only_changed_files", { required: false }) || "true";
+    const testPatterns = coreExports.getInput("test_files", { required: false }) || "**/*.test.ts";
+    const githubToken = coreExports.getInput("github_token", { required: false }) || undefined;
+    const onlyChangedFilesInput = coreExports.getInput("only_changed_files", { required: false }) || "true";
     const onlyChangedFiles = onlyChangedFilesInput === "true";
     return {
         apiKey,
@@ -36001,7 +36000,7 @@ function requireGlob () {
 var globExports = requireGlob();
 var glob = /*@__PURE__*/getDefaultExportFromCjs(globExports);
 
-var github$1 = {};
+var github = {};
 
 var context = {};
 
@@ -70625,9 +70624,9 @@ function requireUtils () {
 var hasRequiredGithub;
 
 function requireGithub () {
-	if (hasRequiredGithub) return github$1;
+	if (hasRequiredGithub) return github;
 	hasRequiredGithub = 1;
-	var __createBinding = (github$1 && github$1.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+	var __createBinding = (github && github.__createBinding) || (Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    var desc = Object.getOwnPropertyDescriptor(m, k);
 	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -70638,23 +70637,23 @@ function requireGithub () {
 	    if (k2 === undefined) k2 = k;
 	    o[k2] = m[k];
 	}));
-	var __setModuleDefault = (github$1 && github$1.__setModuleDefault) || (Object.create ? (function(o, v) {
+	var __setModuleDefault = (github && github.__setModuleDefault) || (Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	});
-	var __importStar = (github$1 && github$1.__importStar) || function (mod) {
+	var __importStar = (github && github.__importStar) || function (mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
 	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
 	    __setModuleDefault(result, mod);
 	    return result;
 	};
-	Object.defineProperty(github$1, "__esModule", { value: true });
-	github$1.getOctokit = github$1.context = void 0;
+	Object.defineProperty(github, "__esModule", { value: true });
+	github.getOctokit = github.context = void 0;
 	const Context = __importStar(requireContext());
 	const utils_1 = requireUtils();
-	github$1.context = new Context.Context();
+	github.context = new Context.Context();
 	/**
 	 * Returns a hydrated octokit ready to use for GitHub Actions
 	 *
@@ -70665,13 +70664,12 @@ function requireGithub () {
 	    const GitHubWithPlugins = utils_1.GitHub.plugin(...additionalPlugins);
 	    return new GitHubWithPlugins((0, utils_1.getOctokitOptions)(token, options));
 	}
-	github$1.getOctokit = getOctokit;
+	github.getOctokit = getOctokit;
 	
-	return github$1;
+	return github;
 }
 
 var githubExports = requireGithub();
-var github = /*@__PURE__*/getDefaultExportFromCjs(githubExports);
 
 async function getChangedFiles(token) {
     try {
@@ -70732,7 +70730,7 @@ async function findTestFiles(testPatterns, onlyChangedFiles, githubToken) {
     }
     let testFiles = [];
     if (onlyChangedFiles && githubToken) {
-        core.info("Getting changed files from PR");
+        coreExports.info("Getting changed files from PR");
         const changedFiles = await getChangedFiles(githubToken);
         const allTestFiles = await getTestFiles();
         const relativeChangedFiles = changedFiles.map((file) => require$$0$a.relative(process.cwd(), file));
@@ -70740,7 +70738,7 @@ async function findTestFiles(testPatterns, onlyChangedFiles, githubToken) {
             const relativePath = require$$0$a.relative(process.cwd(), file);
             return relativeChangedFiles.includes(relativePath);
         });
-        core.info(`Found ${testFiles.length} changed test files out of ${allTestFiles.length} total test files`);
+        coreExports.info(`Found ${testFiles.length} changed test files out of ${allTestFiles.length} total test files`);
     }
     else {
         testFiles = await getTestFiles();
@@ -70800,8 +70798,8 @@ const identifyTopIssues = (detailedReport) => detailedReport
 }));
 
 async function postCommentToPR(token, comment) {
-    const octokit = github.getOctokit(token);
-    const context = github.context;
+    const octokit = githubExports.getOctokit(token);
+    const context = githubExports.context;
     const repo = context.repo;
     let prNumber;
     if (context.payload.pull_request) {
@@ -70811,21 +70809,21 @@ async function postCommentToPR(token, comment) {
         prNumber = context.payload.issue.number;
     }
     if (!prNumber) {
-        core.info("Not in a pull request context. Skipping PR comment.");
+        coreExports.info("Not in a pull request context. Skipping PR comment.");
         return;
     }
     try {
-        core.info(`Posting comment to PR #${prNumber}`);
+        coreExports.info(`Posting comment to PR #${prNumber}`);
         await octokit.rest.issues.createComment({
             ...repo,
             issue_number: prNumber,
             body: comment,
         });
-        core.info(`Comment posted successfully to PR #${prNumber}`);
+        coreExports.info(`Comment posted successfully to PR #${prNumber}`);
     }
     catch (error) {
         const errorMessage = error instanceof Error ? error.message : "Unknown error";
-        core.warning(`Failed to post comment to PR: ${errorMessage}`);
+        coreExports.warning(`Failed to post comment to PR: ${errorMessage}`);
     }
 }
 
@@ -70842,13 +70840,13 @@ async function outputResults(finalSummary, detailedReport, githubToken) {
     if (githubToken) {
         await postCommentToPR(githubToken, markdownComment);
     }
-    core.setOutput("summary", finalSummary);
-    core.setOutput("detailed_report", detailedReport);
-    core.setOutput("markdown_comment", markdownComment);
-    core.info("Analysis complete!");
-    core.info(`Total files analyzed: ${finalSummary.totalFiles}`);
-    core.info(`Average score: ${finalSummary.averageScore}/100`);
-    core.info(`Summary: ${finalSummary.summary}`);
+    coreExports.setOutput("summary", finalSummary);
+    coreExports.setOutput("detailed_report", detailedReport);
+    coreExports.setOutput("markdown_comment", markdownComment);
+    coreExports.info("Analysis complete!");
+    coreExports.info(`Total files analyzed: ${finalSummary.totalFiles}`);
+    coreExports.info(`Average score: ${finalSummary.averageScore}/100`);
+    coreExports.info(`Summary: ${finalSummary.summary}`);
 }
 
 async function processBatchContent(batch) {
@@ -70917,7 +70915,7 @@ async function processOpenAIResponse(batchContent, model, temperature, openai) {
         return JSON.parse(content);
     }
     catch (error) {
-        core.error(`Error parsing JSON: ${error}`);
+        coreExports.error(`Error parsing JSON: ${error}`);
         return {};
     }
 }
@@ -70948,20 +70946,20 @@ async function run() {
         const openai = new OpenAI({
             apiKey: config.apiKey,
         });
-        core.info(`Finding test files`);
+        coreExports.info(`Finding test files`);
         const testFiles = await findTestFiles(config.testPatterns, config.onlyChangedFiles, config.githubToken);
         if (testFiles.length === 0) {
-            core.info(`No test files found`);
+            coreExports.info(`No test files found`);
             return;
         }
-        core.info(`Analyzing ${testFiles.length} test files`);
+        coreExports.info(`Analyzing ${testFiles.length} test files`);
         const { overallSummary, detailedReport } = await processBatches(testFiles, config.batchSize, config.model, config.temperature, openai);
         const finalSummary = generateSummary(testFiles, overallSummary, detailedReport);
         await outputResults(finalSummary, detailedReport, config.githubToken);
     }
     catch (error) {
         if (error instanceof Error)
-            core.setFailed(error.message);
+            coreExports.setFailed(error.message);
     }
 }
 

@@ -1,5 +1,5 @@
 import path from "path";
-import core from "@actions/core";
+import * as core from "@actions/core";
 import glob from "@actions/glob";
 import { getChangedFiles } from "./getChangedFiles";
 

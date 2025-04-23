@@ -1,4 +1,4 @@
-import core from "@actions/core";
+import * as core from "@actions/core";
 import { calculateAverageScore } from "./calculateAverageScore";
 import { generateMarkdownComment } from "./generateMarkdownComment";
 import type { File } from "./getPrompt";

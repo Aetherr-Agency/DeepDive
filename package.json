@@ -62,7 +62,7 @@
 		"vitest": "^3.1.2"
 	},
 	"optionalDependencies": {
-		"@rollup/rollup-linux-x64-gnu": "^4.40.0"
+		"@rollup/rollup-linux-x64-gnu": "^4.40.1"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": ["@biomejs/biome", "esbuild", "lefthook"]

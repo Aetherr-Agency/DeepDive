@@ -80,7 +80,7 @@ jobs:
           fi
 
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Run DeepDive analysis
         id: deepdive
